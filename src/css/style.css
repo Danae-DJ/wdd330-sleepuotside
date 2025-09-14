@@ -261,3 +261,17 @@ footer {
   font-size: var(--small-font);
   padding: 1em;
 }
+
+/*contact.html*/
+.btn {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: #f28c28;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.btn:hover {
+  background-color: #8c2f0b;
+}

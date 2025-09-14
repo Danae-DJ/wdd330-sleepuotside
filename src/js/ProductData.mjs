@@ -2,24 +2,26 @@ function convertToJson(res) {
   if (res.ok) {
     return res.json();
   } else {
-    throw new Error("Error cargando el JSON");
+    throw new Error(`Error al cargar JSON: ${res.status} ${res.statusText}`);
   }
 }
 
 export default class ProductData {
   constructor(category) {
     this.category = category;
-    this.path = `/products.json`; // <- aquí no usar ./ ni ../
+    // IMPORTANTE: la ruta relativa a la raíz del servidor
+    this.path = `/${this.category}.json`;
   }
 
   async getData() {
     try {
       const res = await fetch(this.path);
-      if (!res.ok) throw new Error("Error en fetch: " + res.status);
-      return await res.json();
-    } catch (error) {
-      console.error("Error en fetch:", error);
-      return []; // retornar arreglo vacío si hay error
+      const data = await convertToJson(res);
+      console.log("JSON cargado correctamente:", data);
+      return data;
+    } catch (err) {
+      console.error("Error en fetch:", err);
+      return [];
     }
   }
 
