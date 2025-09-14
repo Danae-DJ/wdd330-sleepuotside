@@ -3,7 +3,7 @@ import ProductData from './ProductData.mjs';
 
 const productListElement = document.querySelector("#productList");
 
-const dataSource = new ProductData("products");
+const dataSource = new ProductData();
 
 const productList = new ProductList("products", dataSource, productListElement);
 

@@ -2,20 +2,25 @@ function convertToJson(res) {
   if (res.ok) {
     return res.json();
   } else {
-    throw new Error("Bad Response");
+    throw new Error("Error cargando el JSON");
   }
 }
 
 export default class ProductData {
   constructor(category) {
     this.category = category;
-    this.path = `./${this.category}.json`; // apunta a src/json/products.json
+    this.path = `/products.json`; // <- aquí no usar ./ ni ../
   }
 
-  getData() {
-    return fetch(this.path)
-      .then(convertToJson)
-      .then((data) => data);
+  async getData() {
+    try {
+      const res = await fetch(this.path);
+      if (!res.ok) throw new Error("Error en fetch: " + res.status);
+      return await res.json();
+    } catch (error) {
+      console.error("Error en fetch:", error);
+      return []; // retornar arreglo vacío si hay error
+    }
   }
 
   async findProductById(id) {
