@@ -1,0 +1,30 @@
+[
+    {
+        "id": "marmot-ajax-3",
+        "brand": "Marmot",
+        "name": "Ajax Tent - 3-Person, 3-Season",
+        "price": 199.99,
+        "image": "images/tents/marmot-ajax-tent-3-person-3-season.jpg"
+    },
+    {
+        "id": "northface-talus-4",
+        "brand": "The North Face",
+        "name": "Talus Tent - 4-Person, 3-Season",
+        "price": 199.99,
+        "image": "images/tents/northface-talus-4-person-3-season.jpg"
+    },
+    {
+        "id": "northface-alpine-3",
+        "brand": "The North Face",
+        "name": "Alpine Guide Tent - 3-Person, 4-Season",
+        "price": 349.99,
+        "image": "images/tents/northface-alpine-3-person-4-season.jpg"
+    },
+    {
+        "id": "cedar-ridge-rimrock-2",
+        "brand": "Cedar Ridge",
+        "name": "Rimrock Tent - 2-Person, 3-Season",
+        "price": 69.99,
+        "image": "images/tents/cedar-ridge-rimrock-2-person-3-season.jpg"
+    }
+]
